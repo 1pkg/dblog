@@ -1,0 +1,37 @@
+baseURL: https://examplesite.com
+title: Kostinatyn Masliuk | Blog
+theme: papermod
+
+enableRobotsTXT: false
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+params:
+  env: production
+  title: Kostinatyn Masliuk | Blog
+  description: Kostinatyn Masliuk | Blog
+  author: Kostinatyn Masliuk
+
+  ShowReadingTime: false
+  ShowShareButtons: false
+  comments: false
+  defaultTheme: auto
+  disableThemeToggle: false
+  disableSpecial1stPost: false
+
+  assets:
+    favicon: '<link / abs url>'
+
+  label:
+    text: '~'
+
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+
+  socialIcons:
+    - name: github
+      url: 'https://github.com/1pkg'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/kostiantyn-masliuk-a0248617b/'

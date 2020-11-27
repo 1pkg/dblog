@@ -1,5 +1,5 @@
 baseURL: https://examplesite.com
-title: Kostinatyn Masliuk | Blog
+title: Kostinatyn Masliuk | Dev Blog
 theme: papermod
 
 enableRobotsTXT: false
@@ -9,8 +9,8 @@ buildExpired: false
 
 params:
   env: production
-  title: Kostinatyn Masliuk | Blog
-  description: Kostinatyn Masliuk | Blog
+  title: Kostinatyn Masliuk | Dev Blog
+  description: Kostinatyn Masliuk | Dev Blog
   author: Kostinatyn Masliuk
 
   ShowReadingTime: false
@@ -21,17 +21,26 @@ params:
   disableSpecial1stPost: false
 
   assets:
-    favicon: '<link / abs url>'
+    favicon: favicon.ico
+    favicon16x16: favicon-16x16.png
+    favicon32x32: favicon-32x32.png
 
   label:
     text: '~'
 
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: /
+    Content: >
+      Hi there 👋
+      My name is Kostinatyn Masliuk,
+      I'm passionate software engineer, developer and open source enthusiast.
+      Focused on distributed systems, data intensive applications and Go 📊.
+      But also following and practicing other software engineer related trends.
 
   socialIcons:
     - name: github
       url: 'https://github.com/1pkg'
     - name: linkedin
       url: 'https://www.linkedin.com/in/kostiantyn-masliuk-a0248617b/'
+    - name: email
+      url: '1pkg@protonmail.com'

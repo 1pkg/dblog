@@ -7,6 +7,11 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
   env: production
   title: Kostinatyn Masliuk | 1pkg dev blog

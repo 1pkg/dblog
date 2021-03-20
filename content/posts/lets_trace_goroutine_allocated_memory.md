@@ -1,6 +1,6 @@
 ---
 author: 'Kostiantyn Masliuk'
-title: "Let's trace goroutine allocated memory (hacking go runtime)"
+title: "Let's trace goroutine allocated memory"
 date: '2020-12-08'
 ---
 

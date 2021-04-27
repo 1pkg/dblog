@@ -98,7 +98,7 @@ Generics is a huge change, maybe the biggest change that will be ever introduced
 
 With that said, I think adding generics as-is or redesigning them to accomplish more into go2.x and not into go1.x might be a good middle ground. At the very least, it will buy some more time to think and sleep on it, which is a really goish way of doing things.
 
-#### 4. Generics will make a part of comunity disappointed.
+#### 4. Generics will make a part of community disappointed.
 
 After years and years of go community defeneding absence of generics and learning how to live with tradeoffs of language design simplicity to language features. We, suddenly, got 180 degree turn in 1 year time window (I bet, nobody treated generics proposals as something feasible before that). Changing people mentality and beliefs is not a simple process, and I'd imagine a lot of people got frustrated because of this turn. Subjectively, despite of survey results, I think, that the true majority of people working with go on a daily basis didn't want generics.
 
@@ -111,8 +111,16 @@ There is a [brilliant article](https://thume.ca/2019/07/14/a-tour-of-metaprogram
 Summarizing all said above, I think that go generics is a bad idea, at least for go1.x, in any imaginable form. There are some alternative options that could facilitate the need for meta programming in go2.x that I feel might be more natural for go, from the least to the most invasive:
 - keep the language it as-is, go was doing great in keeping generics status quo for years, why should it ever change if the absolute majority of use cases have no profit from them;
 - add a few more generic built-in types (and functions) similarly to existing maps, slices, channels type inside the language runtime, I'd imagine couple basic popular data structure types like: list, set and ordered map will make vast majority of the people, asking for generics in go, satisfied;
-- embrace and improve code generation and macrosing tooling as comunity driven solutions;
+- embrace and improve code generation and macrosing tooling as community driven solutions;
 - accept generics in go2.x but also make existing type system maps, slices, channels work well with it (will most likely require to break existing type system completely), also, perhaps, it will demand to add operators overloading as well (to entitle user defined generics to be similar to built-in types), I'd expect final product to have a C++ style;
 - dive much deeper into meta programming and prefer far superior compile time execution instead, e.g. [zig](https://ziglang.org/documentation/master/#comptime) does this, in fact you can even find official proposal in the past [Compile-time Functions and First Class Types](https://github.com/golang/proposal/blob/master/design/15292/2016-09-compile-time-functions.md) that, sadly, didn't get a lot of attention;
 
 In conclusion, I shared my personal thoughts on go generics journey and why I'm dissatisfied with the current state of the generics in go. I just tried to express my thoughts and hopefully didn't hurt anyone's feelings, and If I did, please take my apology in advance. All and all, adding a meta programming support in a quite popular language with a long history of battling generics - is not an easy task. Generics were and still are the long requested feature by community, and their addition to the language might be good in the very end, but currently I have mixed feelings about them. My only hope is that some weak points of current generics desing will not make the way to the final public go release. Thank you for reading and as always stay tuned for more reading! 
+
+## Update
+
+This post sparked quite intense discussions on [reddit](https://www.reddit.com/r/golang/comments/mz6tmd/my_two_cents_on_recent_generics_events_in_go/).
+
+As pointed out in comments, logically, go actually does follow semver. And I originally misread somewhat confusing [release page](https://golang.org/doc/devel/release.html). `It's not a "major" version in the Semver sense of the word, they are just referring to the Go maintenance policy.` Which makes the idea of releasing generics in go1.x idea even worse, in my opinion. 
+
+More importantly, there were a lot of people defending different sides of the generics camp in their own way. Which clearly shows that at least some of my points ("generics will make a part of community disappointed") were valid. Nevertheless, I didn't mean to start another round of holywar on this subject, neither to force people to change their position. My only intention is and ever was to share my perspective and discuss this thrilling topic with others. 

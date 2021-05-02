@@ -78,7 +78,7 @@ In my eyes, generics story developed akin (maybe I'm overstretching here but I s
 
 Now, as we briefly walked through the most significant go generics milestones as I see and understand them. Let me highlight the most important points - why I think that generics is a bad idea how to introduce a meta programming to go.
 
-#### 1. Generics make existing go type system unsound.
+#### 1. Generics make existing go type system inconsistent.
 
 Go has "limited generics" inside already, even [FAQ](https://golang.org/doc/faq#generics) says so "meanwhile, Go's built-in maps and slices". Introducing new form of generics that is orthogonal to those types will make existing built-in maps, slices, channels to not fit. Soon enough "better performing"  generic vectors, maps, queues, etc. libraries will spring up like mushrooms. Which inevitably leads to flaking std library (welcome to C++), where you can find tens of different popular string type implementations.
 
@@ -119,8 +119,15 @@ In conclusion, I shared my personal thoughts on go generics journey and why I'm 
 
 ## Update
 
+##### April 27, 2021
+
 This post sparked quite intense discussions on [reddit](https://www.reddit.com/r/golang/comments/mz6tmd/my_two_cents_on_recent_generics_events_in_go/).
 
 As pointed out in comments, logically, go actually does follow semver. And I originally misread somewhat confusing [release page](https://golang.org/doc/devel/release.html). `It's not a "major" version in the Semver sense of the word, they are just referring to the Go maintenance policy.` Which makes the idea of releasing generics in go1.x idea even worse, in my opinion. 
 
 More importantly, there were a lot of people defending different sides of the generics camp in their own way. Which clearly shows that at least some of my points ("generics will make a part of community disappointed") were valid. Nevertheless, I didn't mean to start another round of holywar on this subject, neither to force people to change their position. My only intention is and ever was to share my perspective and discuss this thrilling topic with others. 
+
+##### May 02, 2021
+
+As also pointed, "unsound" has a very particular meaning in type theory. Therefore "Generics make existing go type system inconsistent" is more accurate thing to say.
+Also a lot of commenters were frustrated by the phrase "in result, technically, just adding a syntax sugar on top of beloved `interface{}` type, thus trading language complexity for a syntax sugar". I admit my mistake here, unconsciously, I didn't list obvious benefit that any generics implementation will bring - improved type safety.

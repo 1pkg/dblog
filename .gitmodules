@@ -1,3 +1,6 @@
 [submodule "themes/papermod"]
 	path = themes/papermod
 	url = https://github.com/1pkg/my-papermod.git
+[submodule "resources/awesome-cv"]
+	path = resources/awesome-cv
+	url = git@github.com:1pkg/awesome-cv.git

@@ -49,3 +49,5 @@ params:
       url: 'https://www.linkedin.com/in/kostiantyn-masliuk-a0248617b/'
     - name: email
       url: 'mailto:1pkg@protonmail.com'
+    - name: cv
+      url: '/cv.pdf'

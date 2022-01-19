@@ -131,3 +131,56 @@ More importantly, there were a lot of people defending different sides of the ge
 
 As also pointed, "unsound" has a very particular meaning in type theory. Therefore "Generics make existing go type system inconsistent" is more accurate thing to say.
 Also a lot of commenters were frustrated by the phrase "in result, technically, just adding a syntax sugar on top of beloved `interface{}` type, thus trading language complexity for a syntax sugar". I admit my mistake here, unconsciously, I didn't list obvious benefit that any generics implementation will bring - improved type safety.
+
+#### Jan 19, 2022
+
+As generics (Type Parameters) are about to hit next Go release, I want to reflect a bit on this article and on generics journey evolution. Since the last update to this article, the Type Parameters design polished all rough spots, and landed on the final minimalistic type sets of constraints design. Less is more, as they say. The Go team and community did a great job trying to contain the ambiguous scope of generics. And deliberately push some [parts](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#issues) of the design like parameterized methods to the future.
+
+Answering my own questions from the past now:
+
+- Generics make existing go type system inconsistent.
+
+Generics will definetely change the way we interact with existing Go type system for the better or worse. But with first party support and latest drive to pivot common types [slice](https://github.com/golang/go/issues/45955) [map](https://github.com/golang/go/issues/47649) around type parameters - Go type system shouldn't be inconsistent.
+
+- Generics use case is narrow, but they add a lot of weight to the language.
+
+Type Parameters by design are really specific and hard to missuse, there is no aim to provide any form of meta programming in Go beyoud parametric polymorphism for now. Which in return should not add a lot of weight to the language.
+
+```
+Complexity
+One of the great aspects of Go is its simplicity. Clearly this design makes the language more complex.
+
+We believe that the increased complexity is small for people reading well written generic code,
+rather than writing it. Naturally people must learn the new syntax for declaring type parameters.
+This new syntax, and the new support for type sets in interfaces, are the only new syntactic
+constructs in this design. The code within a generic function reads like ordinary Go code,
+as can be seen in the examples below. It is an easy shift to go from []int to []T.
+```
+[reference](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#complexity)
+
+- Generics are impossible to take back from the language.
+
+This is a holly truth, but it's again somewhat mitigated by small added [complexity](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#complexity).
+
+- Generics will make a part of community disappointed.
+
+Unfortunately, this is not easily quantifiable data. Silent majority might think about generics differently, but I believe that at the very least the voice of active members of Go community is captured in this design. 
+
+- Generics implementation matters a lot, where generics via "boxing" doesn't bring a lot of value in go.
+
+```
+Implementation
+
+We believe that this design permits different implementation choices.
+Code may be compiled separately for each set of type arguments, or it may be compiled
+as though each type argument is handled similarly to an interface type with method calls,
+or there may be some combination of the two.
+
+In other words, this design permits people to stop choosing slow programmers, and permits
+the implementation to decide between slow compilers (compile each set of type arguments separately)
+or slow execution times (use method calls for each operation on a value of a type argument).
+```
+
+[reference](https://go.googlesource.com/proposal/+/refs/heads/master/design/43651-type-parameters.md#implementation)
+
+In conclusion after design updates and my rethinking of type parameters, I tilted towards them. I will quote: "In general, we have tried to avoid surprises in the design. Only time will tell whether we succeed.".

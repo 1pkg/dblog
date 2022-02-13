@@ -1,5 +1,5 @@
 baseURL: https://1pkg.github.io
-title: Kostinatyn Masliuk | 1pkg dev blog
+title: 1pkg dev blog
 theme: papermod
 
 enableRobotsTXT: false
@@ -14,8 +14,8 @@ markup:
 
 params:
   env: production
-  title: Kostinatyn Masliuk | 1pkg dev blog
-  description: Kostinatyn Masliuk | 1pkg dev blog
+  title: 1pkg dev blog
+  description: 1pkg dev blog
   author: Kostinatyn Masliuk
 
   ShowReadingTime: false
@@ -34,13 +34,12 @@ params:
     text: '~'
 
   homeInfoParams:
-    Title: /
+    Title:
     Content: >
-      Hi there 👋 at 1pkg dev blog.
-      My name is Kostinatyn Masliuk,
-      I'm passionate software engineer and open source enthusiast.
-      I'm mostly focused on distributed systems ⚙️, data intensive applications 🗂️, cloud computing ☁️ and Go,
-      but also actively practicing in other forms of software development and trying to keep up with new software trends.
+      My name is Kostinatyn Masliuk. I'm a SDE and open source enthusiast,
+      who is focused on distributed systems, data intensive applications and cloud computing.
+      Here I occasionally post ideas and thoughts on these subjects and other things. 
+      Any opinions expressed are solely my own and do not express the views or opinions of my employer.
 
   socialIcons:
     - name: github
@@ -49,5 +48,5 @@ params:
       url: 'https://www.linkedin.com/in/kostiantyn-masliuk-a0248617b/'
     - name: email
       url: 'mailto:1pkg@protonmail.com'
-    - name: cv
-      url: '/cv.pdf'
+    # - name: cv
+    #   url: '/cv.pdf'
